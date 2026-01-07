@@ -9,9 +9,7 @@ from line_detection import detect_lines
 from graph_builder import build_connections
 
 
-from lcnn import run_lcnn
-from line_detection_lcnn import detect_lines_lcnn
-from junction import merge_junctions
+
 
 # ===== PATH CONFIG (SAFE FOR WINDOWS) =====
 BASE_DIR = Path(__file__).resolve().parent
@@ -68,14 +66,10 @@ def run_pipeline():
     print(f"✅ Detected {len(symbols)} symbols")
 
     # --------------------------------------------------
-    # 4. LINE + JUNCTION DETECTION
+    # 4. LINE + JUNCTION DETECTION (USING IMPROVED METHOD)
     # --------------------------------------------------
     print("🔹 Detecting pipes and junctions...")
-    print("🔹 Running LCNN line detection...")
-    lcnn_output = run_lcnn(IMAGE_PATH)
-
-    lines, raw_junctions = detect_lines_lcnn(lcnn_output)
-    junctions = merge_junctions(raw_junctions)
+    lines, junctions = detect_lines(IMAGE_PATH)
     print(f"✅ Detected {len(lines)} lines")
     print(f"✅ Detected {len(junctions)} junctions")
 
@@ -87,13 +81,21 @@ def run_pipeline():
     print(f"✅ Created {len(connections)} connections")
 
     # --------------------------------------------------
-    # 6. FINAL JSON
+    # 6. FINAL JSON (STRUCTURED FOR GLB CONVERSION)
     # --------------------------------------------------
     final_json = {
         "symbols": symbols,
         "lines": lines,
         "junctions": junctions,
-        "connections": connections
+        "connections": connections,
+        "metadata": {
+            "image_path": str(IMAGE_PATH),
+            "processing_timestamp": json.dumps(str(np.datetime64('now')), cls=NumpyEncoder).strip('"'),
+            "total_symbols": len(symbols),
+            "total_lines": len(lines),
+            "total_junctions": len(junctions),
+            "total_connections": len(connections)
+        }
     }
 
     # --------------------------------------------------

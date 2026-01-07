@@ -6,7 +6,10 @@ def point_line_distance(px, py, x1, y1, x2, y2):
     den = math.hypot(y2-y1, x2-x1)
     return num / den if den else 1e9
 
-def build_connections(symbols, lines, threshold=10):
+def build_connections(symbols, lines, threshold=15):
+    """
+    Build connections between symbols and lines with improved accuracy.
+    """
     connections = []
 
     for sym in symbols:
@@ -15,11 +18,14 @@ def build_connections(symbols, lines, threshold=10):
         cy = (b["y1"] + b["y2"]) / 2
 
         for line in lines:
-            (x1,y1),(x2,y2) = line["points"]
+            (x1, y1), (x2, y2) = line["points"]
             if point_line_distance(cx, cy, x1, y1, x2, y2) < threshold:
                 connections.append({
                     "symbol_id": sym["class_name"],
-                    "line_id": line["id"]
+                    "symbol_bbox_center": [float(cx), float(cy)],
+                    "line_id": line["id"],
+                    "line_start": [float(x1), float(y1)],
+                    "line_end": [float(x2), float(y2)]
                 })
 
     return connections

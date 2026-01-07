@@ -1,0 +1,318 @@
+{
+    "symbols": [
+        {
+            "class_id": 558,
+            "class_name": "Plug Valve_009",
+            "confidence": 0.999,
+            "bbox": {
+                "x1": 390.0,
+                "y1": 90.0,
+                "x2": 410.0,
+                "y2": 110.0,
+                "width": 20.0,
+                "height": 20.0
+            },
+            "embedding_distance": 0.998
+        },
+        {
+            "class_id": 708,
+            "class_name": "Screw Pump_001",
+            "confidence": 0.998,
+            "bbox": {
+                "x1": 390.0,
+                "y1": 240.0,
+                "x2": 410.0,
+                "y2": 260.0,
+                "width": 20.0,
+                "height": 20.0
+            },
+            "embedding_distance": 1.008
+        }
+    ],
+    "lines": [
+        {
+            "id": "L0",
+            "points": [
+                [
+                    202.0,
+                    198.0
+                ],
+                [
+                    598.0,
+                    198.0
+                ]
+            ],
+            "length": 396.0
+        },
+        {
+            "id": "L1",
+            "points": [
+                [
+                    202.0,
+                    202.0
+                ],
+                [
+                    602.0,
+                    202.0
+                ]
+            ],
+            "length": 400.0
+        },
+        {
+            "id": "L2",
+            "points": [
+                [
+                    102.0,
+                    102.0
+                ],
+                [
+                    402.0,
+                    102.0
+                ]
+            ],
+            "length": 300.0
+        },
+        {
+            "id": "L3",
+            "points": [
+                [
+                    102.0,
+                    98.0
+                ],
+                [
+                    398.0,
+                    98.0
+                ]
+            ],
+            "length": 296.0
+        },
+        {
+            "id": "L4",
+            "points": [
+                [
+                    602.0,
+                    398.0
+                ],
+                [
+                    602.0,
+                    203.0
+                ]
+            ],
+            "length": 195.0
+        },
+        {
+            "id": "L5",
+            "points": [
+                [
+                    598.0,
+                    398.0
+                ],
+                [
+                    598.0,
+                    203.0
+                ]
+            ],
+            "length": 195.0
+        },
+        {
+            "id": "L6",
+            "points": [
+                [
+                    402.0,
+                    298.0
+                ],
+                [
+                    402.0,
+                    103.0
+                ]
+            ],
+            "length": 195.0
+        },
+        {
+            "id": "L7",
+            "points": [
+                [
+                    398.0,
+                    298.0
+                ],
+                [
+                    398.0,
+                    103.0
+                ]
+            ],
+            "length": 195.0
+        }
+    ],
+    "junctions": [
+        [
+            598.0,
+            198.0
+        ],
+        [
+            202.0,
+            198.0
+        ],
+        [
+            598.0,
+            398.0
+        ],
+        [
+            398.0,
+            98.0
+        ],
+        [
+            402.0,
+            103.0
+        ],
+        [
+            602.0,
+            398.0
+        ],
+        [
+            602.0,
+            202.0
+        ],
+        [
+            398.0,
+            103.0
+        ],
+        [
+            598.0,
+            203.0
+        ],
+        [
+            402.0,
+            298.0
+        ],
+        [
+            402.0,
+            102.0
+        ],
+        [
+            202.0,
+            202.0
+        ],
+        [
+            398.0,
+            298.0
+        ],
+        [
+            102.0,
+            102.0
+        ],
+        [
+            602.0,
+            203.0
+        ],
+        [
+            102.0,
+            98.0
+        ]
+    ],
+    "connections": [
+        {
+            "symbol_id": "Plug Valve_009",
+            "symbol_bbox_center": [
+                400.0,
+                100.0
+            ],
+            "line_id": "L2",
+            "line_start": [
+                102.0,
+                102.0
+            ],
+            "line_end": [
+                402.0,
+                102.0
+            ]
+        },
+        {
+            "symbol_id": "Plug Valve_009",
+            "symbol_bbox_center": [
+                400.0,
+                100.0
+            ],
+            "line_id": "L3",
+            "line_start": [
+                102.0,
+                98.0
+            ],
+            "line_end": [
+                398.0,
+                98.0
+            ]
+        },
+        {
+            "symbol_id": "Plug Valve_009",
+            "symbol_bbox_center": [
+                400.0,
+                100.0
+            ],
+            "line_id": "L6",
+            "line_start": [
+                402.0,
+                298.0
+            ],
+            "line_end": [
+                402.0,
+                103.0
+            ]
+        },
+        {
+            "symbol_id": "Plug Valve_009",
+            "symbol_bbox_center": [
+                400.0,
+                100.0
+            ],
+            "line_id": "L7",
+            "line_start": [
+                398.0,
+                298.0
+            ],
+            "line_end": [
+                398.0,
+                103.0
+            ]
+        },
+        {
+            "symbol_id": "Screw Pump_001",
+            "symbol_bbox_center": [
+                400.0,
+                250.0
+            ],
+            "line_id": "L6",
+            "line_start": [
+                402.0,
+                298.0
+            ],
+            "line_end": [
+                402.0,
+                103.0
+            ]
+        },
+        {
+            "symbol_id": "Screw Pump_001",
+            "symbol_bbox_center": [
+                400.0,
+                250.0
+            ],
+            "line_id": "L7",
+            "line_start": [
+                398.0,
+                298.0
+            ],
+            "line_end": [
+                398.0,
+                103.0
+            ]
+        }
+    ],
+    "metadata": {
+        "image_path": "/workspace/test_pid.png",
+        "processing_timestamp": "2026-01-07T09:43:14",
+        "total_symbols": 2,
+        "total_lines": 8,
+        "total_junctions": 16,
+        "total_connections": 6
+    }
+}
